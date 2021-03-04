@@ -1,0 +1,643 @@
+[
+    {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "json_util",
+        "importPath": "bson",
+        "description": "bson",
+        "isExtraImport": true,
+        "detail": "bson",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordRequestForm",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "JWTError",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "CryptContext",
+        "importPath": "passlib.context",
+        "description": "passlib.context",
+        "isExtraImport": true,
+        "detail": "passlib.context",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "models.jwt_model",
+        "description": "models.jwt_model",
+        "isExtraImport": true,
+        "detail": "models.jwt_model",
+        "documentation": {}
+    },
+    {
+        "label": "TokenData",
+        "importPath": "models.jwt_model",
+        "description": "models.jwt_model",
+        "isExtraImport": true,
+        "detail": "models.jwt_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "EmailStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "EmailStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "account_model",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "jwt_model",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "jwt_model",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "punch_model",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "db_service",
+        "importPath": "internal",
+        "description": "internal",
+        "isExtraImport": true,
+        "detail": "internal",
+        "documentation": {}
+    },
+    {
+        "label": "jwt_service",
+        "importPath": "internal",
+        "description": "internal",
+        "isExtraImport": true,
+        "detail": "internal",
+        "documentation": {}
+    },
+    {
+        "label": "db_service",
+        "importPath": "internal",
+        "description": "internal",
+        "isExtraImport": true,
+        "detail": "internal",
+        "documentation": {}
+    },
+    {
+        "label": "jwt_service",
+        "importPath": "internal",
+        "description": "internal",
+        "isExtraImport": true,
+        "detail": "internal",
+        "documentation": {}
+    },
+    {
+        "label": "account",
+        "importPath": "routers",
+        "description": "routers",
+        "isExtraImport": true,
+        "detail": "routers",
+        "documentation": {}
+    },
+    {
+        "label": "punch",
+        "importPath": "routers",
+        "description": "routers",
+        "isExtraImport": true,
+        "detail": "routers",
+        "documentation": {}
+    },
+    {
+        "label": "GZipMiddleware",
+        "importPath": "fastapi.middleware.gzip",
+        "description": "fastapi.middleware.gzip",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.gzip",
+        "documentation": {}
+    },
+    {
+        "label": "RequestValidationError",
+        "importPath": "fastapi.exceptions",
+        "description": "fastapi.exceptions",
+        "isExtraImport": true,
+        "detail": "fastapi.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "traceback",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "traceback",
+        "description": "traceback",
+        "detail": "traceback",
+        "documentation": {}
+    },
+    {
+        "label": "set_prefs",
+        "kind": 2,
+        "importPath": ".vscode..ropeproject.config",
+        "description": ".vscode..ropeproject.config",
+        "peekOfCode": "def set_prefs(prefs):\n    \"\"\"This function is called before opening the project\"\"\"\n    # Specify which files and folders to ignore in the project.\n    # Changes to ignored resources are not added to the history and\n    # VCSs.  Also they are not returned in `Project.get_files()`.\n    # Note that ``?`` and ``*`` match all characters but slashes.\n    # '*.pyc': matches 'test.pyc' and 'pkg/test.pyc'\n    # 'mod*.pyc': matches 'test/mod1.pyc' but not 'mod/1.pyc'\n    # '.svn': matches 'pkg/.svn' and all of its children\n    # 'build/*.o': matches 'build/lib.o' but not 'build/sub/lib.o'",
+        "detail": ".vscode..ropeproject.config",
+        "documentation": {}
+    },
+    {
+        "label": "project_opened",
+        "kind": 2,
+        "importPath": ".vscode..ropeproject.config",
+        "description": ".vscode..ropeproject.config",
+        "peekOfCode": "def project_opened(project):\n    \"\"\"This function is called after opening the project\"\"\"\n    # Do whatever you like here!",
+        "detail": ".vscode..ropeproject.config",
+        "documentation": {}
+    },
+    {
+        "label": "convert_collection",
+        "kind": 2,
+        "importPath": "internal.db_service",
+        "description": "internal.db_service",
+        "peekOfCode": "def convert_collection(data):\n    '''\n    轉換Collection資料形態\n    '''\n    return json.loads(json_util.dumps(data))\ndef db(db_name):\n    '''\n    取得MongoDB 資料庫\n    '''\n    if os.getenv('ENVIRONMENT') == 'production':",
+        "detail": "internal.db_service",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 2,
+        "importPath": "internal.db_service",
+        "description": "internal.db_service",
+        "peekOfCode": "def db(db_name):\n    '''\n    取得MongoDB 資料庫\n    '''\n    if os.getenv('ENVIRONMENT') == 'production':\n        db_uri =('mongodb://root:example@mongo/')\n    else:\n        db_uri =('mongodb://root:example@localhost:1769/')    \n    db_client = MongoClient(db_uri)\n    return db_client[db_name]",
+        "detail": "internal.db_service",
+        "documentation": {}
+    },
+    {
+        "label": "user_create",
+        "kind": 2,
+        "importPath": "internal.db_service",
+        "description": "internal.db_service",
+        "peekOfCode": "def user_create(data):\n    '''\n    新增使用者資料\n    '''\n    create_data=db('workcheck')['user'].insert_one(data)\n    return create_data\ndef user_query(data):\n    '''\n    查詢使用者資料\n    '''",
+        "detail": "internal.db_service",
+        "documentation": {}
+    },
+    {
+        "label": "user_query",
+        "kind": 2,
+        "importPath": "internal.db_service",
+        "description": "internal.db_service",
+        "peekOfCode": "def user_query(data):\n    '''\n    查詢使用者資料\n    '''\n    return convert_collection(db('workcheck')['user'].find_one(data))\ndef punch_create(data):\n    '''\n    新增打卡資料\n    '''\n    return db('workcheck')['punch'].insert_one(data)     ",
+        "detail": "internal.db_service",
+        "documentation": {}
+    },
+    {
+        "label": "punch_create",
+        "kind": 2,
+        "importPath": "internal.db_service",
+        "description": "internal.db_service",
+        "peekOfCode": "def punch_create(data):\n    '''\n    新增打卡資料\n    '''\n    return db('workcheck')['punch'].insert_one(data)     \ndef punch_get(user_id):\n    '''\n    取得使用者打卡資料\n    '''\n    return convert_collection(db('workcheck')['punch'].find({'userId':user_id}).sort('punchDateTime', -1))       #.sort('punchDateTime', -1)",
+        "detail": "internal.db_service",
+        "documentation": {}
+    },
+    {
+        "label": "punch_get",
+        "kind": 2,
+        "importPath": "internal.db_service",
+        "description": "internal.db_service",
+        "peekOfCode": "def punch_get(user_id):\n    '''\n    取得使用者打卡資料\n    '''\n    return convert_collection(db('workcheck')['punch'].find({'userId':user_id}).sort('punchDateTime', -1))       #.sort('punchDateTime', -1)",
+        "detail": "internal.db_service",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "kind": 2,
+        "importPath": "internal.jwt_service",
+        "description": "internal.jwt_service",
+        "peekOfCode": "def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.utcnow() + expires_delta\n    else:\n        expire = datetime.utcnow() + timedelta(minutes=15)\n    to_encode.update({\"exp\": expire})\n    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)\n    return encoded_jwt\nasync def get_current_user(token: str = Depends(oauth2_scheme)):",
+        "detail": "internal.jwt_service",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "internal.jwt_service",
+        "description": "internal.jwt_service",
+        "peekOfCode": "SECRET_KEY = \"bf3ed767731e2a7c77cbb1693db1468a50f4f0a1052757f9d92dbb8206ded372\"\nALGORITHM = \"HS256\"\nACCESS_TOKEN_EXPIRE_MINUTES = 30\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\ndef create_access_token(data: dict, expires_delta: Optional[timedelta] = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.utcnow() + expires_delta\n    else:",
+        "detail": "internal.jwt_service",
+        "documentation": {}
+    },
+    {
+        "label": "ALGORITHM",
+        "kind": 5,
+        "importPath": "internal.jwt_service",
+        "description": "internal.jwt_service",
+        "peekOfCode": "ALGORITHM = \"HS256\"\nACCESS_TOKEN_EXPIRE_MINUTES = 30\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\ndef create_access_token(data: dict, expires_delta: Optional[timedelta] = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.utcnow() + expires_delta\n    else:\n        expire = datetime.utcnow() + timedelta(minutes=15)",
+        "detail": "internal.jwt_service",
+        "documentation": {}
+    },
+    {
+        "label": "ACCESS_TOKEN_EXPIRE_MINUTES",
+        "kind": 5,
+        "importPath": "internal.jwt_service",
+        "description": "internal.jwt_service",
+        "peekOfCode": "ACCESS_TOKEN_EXPIRE_MINUTES = 30\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\ndef create_access_token(data: dict, expires_delta: Optional[timedelta] = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.utcnow() + expires_delta\n    else:\n        expire = datetime.utcnow() + timedelta(minutes=15)\n    to_encode.update({\"exp\": expire})",
+        "detail": "internal.jwt_service",
+        "documentation": {}
+    },
+    {
+        "label": "pwd_context",
+        "kind": 5,
+        "importPath": "internal.jwt_service",
+        "description": "internal.jwt_service",
+        "peekOfCode": "pwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\ndef create_access_token(data: dict, expires_delta: Optional[timedelta] = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.utcnow() + expires_delta\n    else:\n        expire = datetime.utcnow() + timedelta(minutes=15)\n    to_encode.update({\"exp\": expire})\n    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)",
+        "detail": "internal.jwt_service",
+        "documentation": {}
+    },
+    {
+        "label": "oauth2_scheme",
+        "kind": 5,
+        "importPath": "internal.jwt_service",
+        "description": "internal.jwt_service",
+        "peekOfCode": "oauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\ndef create_access_token(data: dict, expires_delta: Optional[timedelta] = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.utcnow() + expires_delta\n    else:\n        expire = datetime.utcnow() + timedelta(minutes=15)\n    to_encode.update({\"exp\": expire})\n    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)\n    return encoded_jwt",
+        "detail": "internal.jwt_service",
+        "documentation": {}
+    },
+    {
+        "label": "Login",
+        "kind": 6,
+        "importPath": "models.account_model",
+        "description": "models.account_model",
+        "peekOfCode": "class Login(BaseModel):\n    userName:str\n    password:str\nclass Register(Login):\n    displayName: str\n    email:EmailStr",
+        "detail": "models.account_model",
+        "documentation": {}
+    },
+    {
+        "label": "Register",
+        "kind": 6,
+        "importPath": "models.account_model",
+        "description": "models.account_model",
+        "peekOfCode": "class Register(Login):\n    displayName: str\n    email:EmailStr",
+        "detail": "models.account_model",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "kind": 6,
+        "importPath": "models.jwt_model",
+        "description": "models.jwt_model",
+        "peekOfCode": "class Token(BaseModel):\n    access_token: str\n    token_type: str\nclass TokenData(BaseModel):\n    userName: Optional[str] = None\n    userId: Optional[str] = None\n    displayName: Optional[str] = None\n# class User(BaseModel):\n#     username: str\n#     email: Optional[str] = None",
+        "detail": "models.jwt_model",
+        "documentation": {}
+    },
+    {
+        "label": "TokenData",
+        "kind": 6,
+        "importPath": "models.jwt_model",
+        "description": "models.jwt_model",
+        "peekOfCode": "class TokenData(BaseModel):\n    userName: Optional[str] = None\n    userId: Optional[str] = None\n    displayName: Optional[str] = None\n# class User(BaseModel):\n#     username: str\n#     email: Optional[str] = None\n#     full_name: Optional[str] = None\n#     disabled: Optional[bool] = None\n# class UserInDB(User):",
+        "detail": "models.jwt_model",
+        "documentation": {}
+    },
+    {
+        "label": "Punch",
+        "kind": 6,
+        "importPath": "models.punch_model",
+        "description": "models.punch_model",
+        "peekOfCode": "class Punch(BaseModel):\n    punchType:str\n    punchDateTime:str\n    userId:str\n    latitude:str\n    longtitude:str\n    wifiBSSId:str\n    wifiIP:str\n    wifiName:str",
+        "detail": "models.punch_model",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "routers.account",
+        "description": "routers.account",
+        "peekOfCode": "router = APIRouter(prefix=\"/api/account\",tags=[\"Account\"])\n@router.post(\"/register\", response_model=jwt_model.Token)\nasync def register(data:account_model.Register,summary=\"註冊\"):\n    data_dict=data.dict()\n    create_data=db_service.user_create(data_dict)\n    access_token_expires = timedelta(minutes=jwt_service.ACCESS_TOKEN_EXPIRE_MINUTES)\n    access_token = jwt_service.create_access_token(\n        data={\"userName\": data_dict['userName'],\"userId\":str(create_data.inserted_id),\"displayName\":data_dict['displayName']}, expires_delta=access_token_expires\n    )\n    return {\"access_token\": access_token, \"token_type\": \"bearer\"}",
+        "detail": "routers.account",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "routers.punch",
+        "description": "routers.punch",
+        "peekOfCode": "router = APIRouter(prefix=\"/api/punch\",tags=[\"Punch\"])\n@router.post(\"\",summary=\"新增打卡資料\")\nasync def post_punch(data:punch_model.Punch, jwt_auth:jwt_model.TokenData = Depends(jwt_service.get_current_active_user)):#\n    data_dict=data.dict()\n    create_data=db_service.punch_create(data_dict)\n    return {'createId':str(create_data.inserted_id)}\n@router.get(\"/{id}\",summary=\"取得使用者打卡資料\")\nasync def get_punch(id ,jwt_auth:jwt_model.TokenData = Depends(jwt_service.get_current_active_user)):#\n    create_data=db_service.punch_get(id)\n    return ((create_data))",
+        "detail": "routers.punch",
+        "documentation": {}
+    }
+]

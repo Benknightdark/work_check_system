@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+pydantic[email,typing_extensions,dotenv]
+email-validator
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
+requests2
+beautifulsoup4
+python-dotenv
+pymongo
