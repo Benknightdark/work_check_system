@@ -9,7 +9,6 @@ docker-compose up
   - 修改baseUrl的參數為Api服務的網址
 ## Prepare To Do
 - 打卡明細modal調整為widget
-- 調整打卡明細modal在ios的UI呈現
 ## 系統截圖
 ### 儀表版
 ![alt text](./screenshot/IMG_0079.PNG "儀表版") 
