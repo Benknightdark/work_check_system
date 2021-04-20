@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-String baseUrl = "https://e1885ecdbfc5.ngrok.io/api";
+String baseUrl = "https://ed7f13b66367.ngrok.io/api";
 // 一般呼叫api
 Dio customDio() {
   BaseOptions options = new BaseOptions(

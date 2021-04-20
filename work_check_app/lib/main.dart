@@ -13,15 +13,6 @@ void main() {
 }
 
 class App extends StatefulWidget {
-  // @override
-  // Widget build(BuildContext context) {
-  //   return MaterialApp(
-  //       title: "Movies",
-  //       home: ChangeNotifierProvider(
-  //         create: (context) => MovieListViewModel(),
-  //         child: MovieListPage(),
-  //       ));
-  // }
   @override
   _AppState createState() => new _AppState();
 }
@@ -38,19 +29,7 @@ class _AppState extends State<App> {
     var detroit = tz.getLocation('Asia/Taipei');
     tz.setLocalLocation(detroit);
 
-    return
-
-        // MaterialApp(
-        //   title: "WorkCheckApp",
-        //   home: ChangeNotifierProvider(
-        //     create: (context) => MovieListViewModel(),
-        //     child: MovieListPage(),
-        //     lazy: true,
-        //   ),
-        //   builder: EasyLoading.init(),
-        // );
-
-        MaterialApp(
+    return MaterialApp(
       title: "WorkCheckApp",
       home: ChangeNotifierProvider(
         create: (context) => DashboardViewModel(), //DashboardViewModel(),
