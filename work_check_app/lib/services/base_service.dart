@@ -13,8 +13,10 @@ Dio customDio() {
   Dio dio = new Dio(options);
   dio.interceptors.add(InterceptorsWrapper(onResponse:
       (Response response, ResponseInterceptorHandler handler) async {
+    handler.next(response);
     return response; // continue
   }, onError: (DioError e, ErrorInterceptorHandler handler) async {
+    handler.next(e);
     print(e.response);
     EasyLoading.showError(e.response.data['data']['detail']);
     return e.response;
@@ -27,6 +29,8 @@ Dio customAuthDio() {
   Dio dio = customDio();
   dio.interceptors.add(InterceptorsWrapper(onRequest:
       (RequestOptions options, RequestInterceptorHandler handler) async {
+    handler.next(options);
+
     dio.interceptors.requestLock.lock();
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String token = prefs.getString("token");
@@ -35,8 +39,11 @@ Dio customAuthDio() {
     dio.interceptors.requestLock.unlock();
     return options;
   }, onResponse: (Response response, ResponseInterceptorHandler handler) async {
+    handler.next(response);
+
     return response; // continue
   }, onError: (DioError e, ErrorInterceptorHandler handler) async {
+    handler.next(e);
     // if (e.response.data["title"] == "422") {
     //   EasyLoading.showError("傳送資料未符合欄位驗證規則");
     // } else {

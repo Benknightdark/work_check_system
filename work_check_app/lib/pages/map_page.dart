@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import "package:work_check_app/services/punch_detail_service.dart";
 
 class MapPage extends StatefulWidget {
   final dynamic data;
-  final Function(dynamic item) onShowDetail;
 
-  MapPage({this.data, this.onShowDetail});
+  MapPage({this.data});
   @override
   _MapPageState createState() => _MapPageState();
 }
@@ -57,7 +57,7 @@ class _MapPageState extends State<MapPage> {
           markerId: MarkerId(tappedPoint.toString()),
           position: tappedPoint,
           onTap: () {
-            widget.onShowDetail(widget.data);
+            PunchDetailService().showDetail(context, widget.data);
           }));
       print(tappedPoint.toJson());
       print("fuck");
@@ -69,7 +69,7 @@ class _MapPageState extends State<MapPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: Text('Map'),
+        title: Text('打卡地圖'),
       ),
       body: GoogleMap(
         mapType: MapType.normal,
