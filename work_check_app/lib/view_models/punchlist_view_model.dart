@@ -4,7 +4,8 @@ import 'package:work_check_app/services/api/punchservice.dart';
 import 'package:work_check_app/services/base_service.dart';
 
 class PunchlistViewModel extends ChangeNotifier {
-  List<dynamic> punchlist = List<dynamic>();
+  List<dynamic>? punchlist;
+  // = List<dynamic>();
   bool showCalendar = false;
   void changeDisplay() {
     showCalendar = !showCalendar;
@@ -18,7 +19,7 @@ class PunchlistViewModel extends ChangeNotifier {
     } else {
       var p = new Punchservice();
       var res = await p.getPunchList(userData.data['data']['userId']);
-      this.punchlist = res.data['data'];
+      this.punchlist = res?.data['data'];
       // print(this.punchlist);
     }
     notifyListeners();

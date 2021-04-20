@@ -13,10 +13,10 @@ class CalenderWidget extends StatefulWidget {
 
 class _CalenderWidgetState extends State<CalenderWidget>
     with TickerProviderStateMixin {
-  Map<DateTime, List> _events;
-  List _selectedEvents;
-  AnimationController _animationController;
-  CalendarController _calendarController;
+  Map<DateTime, List>? _events;
+  List? _selectedEvents;
+  AnimationController? _animationController;
+  CalendarController? _calendarController;
 
   @override
   void initState() {
@@ -31,22 +31,22 @@ class _CalenderWidgetState extends State<CalenderWidget>
           .replaceAll('/', '-')
           .split(" ")[0];
       var punchTypeName = element['punchType'] == "work" ? "😢上班打卡" : "😊下班打卡";
-      if (_events[DateTime.parse(punchDateTime)] == null) {
-        _events[DateTime.parse(punchDateTime)] = [
+      if (_events?[DateTime.parse(punchDateTime)] == null) {
+        _events?[DateTime.parse(punchDateTime)] = [
           {
             "title": punchTypeName + " (" + element['punchDateTime'] + ")",
             "details": element
           }
         ];
       } else {
-        _events[DateTime.parse(punchDateTime)].add({
+        _events?[DateTime.parse(punchDateTime)]?.add({
           "title": punchTypeName + " (" + element['punchDateTime'] + ")",
           "details": element
         });
       }
     });
     print(_events);
-    _selectedEvents = _events[_selectedDay] ?? [];
+    _selectedEvents = _events?[_selectedDay] ?? [];
     _calendarController = CalendarController();
 
     _animationController = AnimationController(
@@ -54,13 +54,13 @@ class _CalenderWidgetState extends State<CalenderWidget>
       duration: const Duration(milliseconds: 400),
     );
 
-    _animationController.forward();
+    _animationController?.forward();
   }
 
   @override
   void dispose() {
-    _animationController.dispose();
-    _calendarController.dispose();
+    _animationController?.dispose();
+    _calendarController?.dispose();
     super.dispose();
   }
 
@@ -129,7 +129,7 @@ class _CalenderWidgetState extends State<CalenderWidget>
   Widget _buildEventList() {
     return ListView(
       children: _selectedEvents
-          .map((event) => Container(
+          ?.map((event) => Container(
                 decoration: BoxDecoration(
                   border: Border.all(width: 0.8),
                   borderRadius: BorderRadius.circular(12.0),

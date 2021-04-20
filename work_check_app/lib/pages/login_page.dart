@@ -36,7 +36,8 @@ class _LoginPageState extends State<LoginPage>
   Widget build(BuildContext context) {
     final vm = Provider.of<LoginViewModel>(context);
 
-    final GlobalKey<FormBuilderState> _fbKey = GlobalKey<FormBuilderState>();
+    late final GlobalKey<FormBuilderState> _fbKey =
+        GlobalKey<FormBuilderState>();
 
     return Scaffold(
       appBar: AppBar(

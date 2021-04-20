@@ -1,12 +1,12 @@
 class Punch {
-  String punchType = '';
-  String punchDateTime = '';
-  String userId = '';
-  String latitude = '';
-  String longtitude = '';
-  String wifiBSSId = '';
-  String wifiIP = '';
-  String wifiName = '';
+  String? punchType = '';
+  String? punchDateTime = '';
+  String? userId = '';
+  String? latitude = '';
+  String? longtitude = '';
+  String? wifiBSSId = '';
+  String? wifiIP = '';
+  String? wifiName = '';
 
   Punch(
       {this.punchType,

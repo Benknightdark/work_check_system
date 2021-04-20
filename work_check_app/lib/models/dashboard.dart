@@ -1,8 +1,8 @@
 class Dashboard {
-  String displayName = '';
-  int workHour = 0;
-  String punchInTime = '';
-  String punchOutTime = '';
+  String? displayName;
+  int? workHour;
+  String? punchInTime;
+  String? punchOutTime;
   Dashboard(
       {this.displayName, this.workHour, this.punchInTime, this.punchOutTime});
   factory Dashboard.fromJson(Map<String, dynamic> json) {
