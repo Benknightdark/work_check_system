@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:provider/provider.dart';
 import 'package:work_check_app/models/register.dart';
-import 'package:work_check_app/pages/dashboard_page.dart';
-import 'package:work_check_app/view_models/dashboard_view_model.dart';
+
 import 'package:work_check_app/view_models/register_view_model.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -26,7 +25,8 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     final vm = Provider.of<RegisterViewModel>(context);
-    final GlobalKey<FormBuilderState> _fbKey = GlobalKey<FormBuilderState>();
+    late final GlobalKey<FormBuilderState> _fbKey =
+        GlobalKey<FormBuilderState>();
 
     return Scaffold(
       appBar: AppBar(
@@ -94,9 +94,9 @@ class _RegisterPageState extends State<RegisterPage> {
                           onPressed: () async {
                             if (_fbKey.currentState.saveAndValidate()) {
                               print(_fbKey.currentState.value);
-                              vm?.register =
+                              vm.register =
                                   Register.fromJson(_fbKey.currentState.value);
-                              var resData = await vm?.registerUser();
+                              var resData = await vm.registerUser();
                               if (resData != null) {
                                 Navigator.of(context).pop(resData);
                                 // Navigator.pushAndRemoveUntil(

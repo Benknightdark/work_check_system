@@ -14,7 +14,7 @@ class CalenderWidget extends StatefulWidget {
 class _CalenderWidgetState extends State<CalenderWidget>
     with TickerProviderStateMixin {
   Map<DateTime, List>? _events;
-  List? _selectedEvents;
+  List _selectedEvents = List.empty();
   AnimationController? _animationController;
   CalendarController? _calendarController;
 
@@ -129,7 +129,7 @@ class _CalenderWidgetState extends State<CalenderWidget>
   Widget _buildEventList() {
     return ListView(
       children: _selectedEvents
-          ?.map((event) => Container(
+          .map((event) => Container(
                 decoration: BoxDecoration(
                   border: Border.all(width: 0.8),
                   borderRadius: BorderRadius.circular(12.0),
