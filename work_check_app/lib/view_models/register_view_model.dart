@@ -7,10 +7,9 @@ import 'package:work_check_app/services/base_service.dart';
 class RegisterViewModel extends ChangeNotifier {
   Register register = Register();
   //notifyListeners();
-  Future<Response<dynamic>> registerUser() async {
-    Response<dynamic> data;
+  Future<Response<dynamic>?> registerUser() async {
     try {
-      data =
+      var data =
           await customDio().post('/account/register', data: register.toJson());
       SharedPreferences prefs = await SharedPreferences.getInstance();
       // print(data.data['data']['access_token']);
@@ -19,7 +18,7 @@ class RegisterViewModel extends ChangeNotifier {
       return data;
     } on Exception catch (e) {
       print(e);
-      return data;
+      return null;
     }
   }
 }
