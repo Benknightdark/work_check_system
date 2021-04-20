@@ -11,10 +11,10 @@ Dio customDio() {
     receiveTimeout: 60000,
   );
   Dio dio = new Dio(options);
-  dio.interceptors
-      .add(InterceptorsWrapper(onResponse: (Response response) async {
+  dio.interceptors.add(InterceptorsWrapper(onResponse:
+      (Response response, ResponseInterceptorHandler handler) async {
     return response; // continue
-  }, onError: (DioError e) async {
+  }, onError: (DioError e, ErrorInterceptorHandler handler) async {
     print(e.response);
     EasyLoading.showError(e.response.data['data']['detail']);
     return e.response;
@@ -25,8 +25,8 @@ Dio customDio() {
 // 加入jwt token呼叫api
 Dio customAuthDio() {
   Dio dio = customDio();
-  dio.interceptors
-      .add(InterceptorsWrapper(onRequest: (RequestOptions options) async {
+  dio.interceptors.add(InterceptorsWrapper(onRequest:
+      (RequestOptions options, RequestInterceptorHandler handler) async {
     dio.interceptors.requestLock.lock();
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String token = prefs.getString("token");
@@ -34,9 +34,9 @@ Dio customAuthDio() {
     options.headers["Authorization"] = "Bearer " + token;
     dio.interceptors.requestLock.unlock();
     return options;
-  }, onResponse: (Response response) async {
+  }, onResponse: (Response response, ResponseInterceptorHandler handler) async {
     return response; // continue
-  }, onError: (DioError e) async {
+  }, onError: (DioError e, ErrorInterceptorHandler handler) async {
     // if (e.response.data["title"] == "422") {
     //   EasyLoading.showError("傳送資料未符合欄位驗證規則");
     // } else {
