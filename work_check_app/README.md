@@ -3,7 +3,10 @@
 # 執行build_runner
 flutter packages pub run build_runner build --delete-conflicting-outputs
 # 產生範本程式
-./main.exe  full_code --file_name register --app_name work_check_app    
+./main.exe  full_code --file_name register --app_name work_check_app  
+
+# build apk
+flutter build apk --no-sound-null-safety
 ```
 ## Reference
 - https://briian.com/68862/

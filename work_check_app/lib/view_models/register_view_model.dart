@@ -7,7 +7,7 @@ import 'package:work_check_app/services/base_service.dart';
 class RegisterViewModel extends ChangeNotifier {
   Register register = Register();
   //notifyListeners();
-  Future<Response<dynamic>> registerUser() async {
+  Future<Response<dynamic>?> registerUser() async {
     try {
       var data =
           await customDio().post('/account/register', data: register.toJson());

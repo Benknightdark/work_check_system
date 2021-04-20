@@ -5,11 +5,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:provider/provider.dart';
 import 'package:work_check_app/pages/register_page.dart';
-import 'package:work_check_app/view_models/dashboard_view_model.dart';
 import 'package:work_check_app/view_models/login_view_model.dart';
 import 'package:work_check_app/view_models/register_view_model.dart';
-
-import 'dashboard_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -18,7 +15,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  AnimationController? _controller;
 
   @override
   void initState() {
@@ -29,14 +26,16 @@ class _LoginPageState extends State<LoginPage>
   @override
   void dispose() {
     super.dispose();
-    _controller.dispose();
+    _controller?.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final vm = Provider.of<LoginViewModel>(context);
-
-    final GlobalKey<FormBuilderState> _fbKey = GlobalKey<FormBuilderState>();
+    var userNameController =
+        TextEditingController(text: vm.loginModel.userName);
+    var passwordController =
+        TextEditingController(text: vm.loginModel.password);
 
     return Scaffold(
       appBar: AppBar(
@@ -49,22 +48,32 @@ class _LoginPageState extends State<LoginPage>
             children: [
               Padding(
                 padding: EdgeInsets.all(10),
-                child: FormBuilder(
-                  key: _fbKey,
+                child: Container(
                   child: Column(children: <Widget>[
                     Image.network(
                       "https://media.giphy.com/media/hSyloQofR3lRt4qSYs/giphy.gif",
                       fit: BoxFit.cover,
                     ),
-                    FormBuilderTextField(
-                      name: "UserName",
-                      decoration: InputDecoration(labelText: "帳號"),
+                    TextFormField(
+                      autofocus: true,
+                      controller: userNameController,
+                      decoration: InputDecoration(
+                        enabledBorder: InputBorder.none,
+                        contentPadding: EdgeInsets.zero,
+                        focusColor: Colors.black,
+                        labelText: "帳號",
+                      ),
                     ),
-                    FormBuilderTextField(
-                      obscureText: true,
-                      name: "Password",
-                      decoration: InputDecoration(labelText: "密碼"),
-                    ),
+                    TextFormField(
+                        autofocus: true,
+                        obscureText: true,
+                        controller: passwordController,
+                        decoration: InputDecoration(
+                          enabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.zero,
+                          focusColor: Colors.black,
+                          labelText: "密碼",
+                        )),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -75,33 +84,16 @@ class _LoginPageState extends State<LoginPage>
                               borderRadius: BorderRadius.circular(18.0),
                               side: BorderSide(color: Colors.blueAccent)),
                           onPressed: () {
-                            if (_fbKey.currentState.saveAndValidate()) {
-                              (() async {
-                                vm?.loginModel?.password =
-                                    _fbKey.currentState.value["Password"];
-                                vm?.loginModel?.userName =
-                                    _fbKey.currentState.value["UserName"];
-                                EasyLoading.show(status: '登入中');
+                            (() async {
+                              vm.loginModel.password = passwordController.text;
+                              vm.loginModel.userName = userNameController.text;
+                              EasyLoading.show(status: '登入中');
 
-                                var resData = await vm?.login();
-                                // Navigator.pushAndRemoveUntil(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //     builder: (BuildContext context) => Provider(
-                                //       create: (context) => DashboardViewModel(),
-                                //       builder: (context, child) =>
-                                //           DashboardPage(),
-                                //     ),
-                                //   ),
-                                //   (Route<dynamic> route) => false,
-                                // );
-                                if (resData) {
-                                  Navigator.of(context).pop(resData);
-                                }
-                                // EasyLoading.dismiss();
-                              })();
-                              // print(_fbKey.currentState.value);
-                            }
+                              var resData = await vm.login();
+                              if (resData) {
+                                Navigator.of(context).pop(resData);
+                              }
+                            })();
                           },
                         ),
                         MaterialButton(
@@ -110,7 +102,10 @@ class _LoginPageState extends State<LoginPage>
                               borderRadius: BorderRadius.circular(18.0),
                               side: BorderSide(color: Colors.deepOrangeAccent)),
                           onPressed: () {
-                            _fbKey.currentState.reset();
+                            passwordController.text = "";
+                            userNameController.text = "";
+                            vm.loginModel.password = passwordController.text;
+                            vm.loginModel.userName = userNameController.text;
                           },
                         ),
                       ],
@@ -119,7 +114,7 @@ class _LoginPageState extends State<LoginPage>
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        FlatButton(
+                        TextButton(
                           onPressed: () {},
                           child: Text(
                             '忘記密碼',

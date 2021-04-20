@@ -249,7 +249,7 @@ class _DashboardPageState extends State<DashboardPage> {
               }));
     }
 
-    if (vm?.dashboard?.displayName == null) {
+    if (vm.dashboard.displayName == null) {
       return Container();
     } else {
       return Scaffold(
@@ -270,7 +270,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   children: <Widget>[
                     TextButton(
                       onPressed: () {
-                        if (vm?.dashboard?.displayName == "登入") {
+                        if (vm.dashboard.displayName == "登入") {
                           Navigator.of(context)
                               .push(
                             MaterialPageRoute(
@@ -314,7 +314,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                   ));
                         }
                       },
-                      child: Text(vm?.dashboard?.displayName),
+                      child: Text(vm.dashboard.displayName.toString()),
                     )
                   ],
                 ),
@@ -342,7 +342,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                 '${(new DateFormat("yyyy/M").format(new DateTime.now()))}月工作時數',
                                 style: TextStyle(
                                     color: Colors.blueAccent, fontSize: 17)),
-                            Text('${vm?.dashboard?.workHour}小時',
+                            Text('${vm.dashboard.workHour}小時',
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.w500,
@@ -403,7 +403,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         ]),
                   ), onTap: () async {
                 EasyLoading.show(status: '打卡中...');
-                var resData = await vm?.punch('work');
+                var resData = await vm.punch('work');
                 if (resData != null) {
                   EasyLoading.showToast(resData['title'] != "200"
                       ? resData["data"]["detail"]
@@ -435,7 +435,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   ), onTap: () async {
                 EasyLoading.show(status: '打卡中...');
 
-                var resData = await vm?.punch('work_off');
+                var resData = await vm.punch('work_off');
                 if (resData != null) {
                   EasyLoading.showToast(resData['title'] != "200"
                       ? resData["data"]["detail"]
@@ -454,7 +454,7 @@ class _DashboardPageState extends State<DashboardPage> {
     }
   }
 
-  Widget _buildTile(Widget child, {Function() onTap}) {
+  Widget _buildTile(Widget child, {Function()? onTap}) {
     return Material(
         elevation: 14.0,
         borderRadius: BorderRadius.circular(12.0),

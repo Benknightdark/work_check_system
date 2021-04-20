@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:provider/provider.dart';
 import 'package:work_check_app/models/register.dart';
-import 'package:work_check_app/pages/dashboard_page.dart';
-import 'package:work_check_app/view_models/dashboard_view_model.dart';
+
 import 'package:work_check_app/view_models/register_view_model.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -26,8 +25,10 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     final vm = Provider.of<RegisterViewModel>(context);
-    final GlobalKey<FormBuilderState> _fbKey = GlobalKey<FormBuilderState>();
-
+    var userNameController = TextEditingController();
+    var passwordController = TextEditingController();
+    var emailController = TextEditingController();
+    var displayNameController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         title: Text('註冊'),
@@ -39,49 +40,53 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               Padding(
                 padding: EdgeInsets.all(10),
-                child: FormBuilder(
-                  key: _fbKey,
+                child: Container(
                   child: Column(children: <Widget>[
                     Image.network(
                       "https://media.giphy.com/media/2NaoYKJHNAw8XYgGP7/giphy.gif",
                       fit: BoxFit.cover,
                     ),
+                    TextFormField(
+                      autofocus: true,
+                      controller: userNameController,
+                      decoration: InputDecoration(
+                        enabledBorder: InputBorder.none,
+                        contentPadding: EdgeInsets.zero,
+                        focusColor: Colors.black,
+                        labelText: "帳號",
+                      ),
+                    ),
+                    TextFormField(
+                        autofocus: true,
+                        obscureText: true,
+                        controller: passwordController,
+                        decoration: InputDecoration(
+                          enabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.zero,
+                          focusColor: Colors.black,
+                          labelText: "密碼",
+                        )),
                     //
-                    FormBuilderTextField(
-                      name: "userName",
-                      decoration: InputDecoration(labelText: "帳號"),
-                      validator: FormBuilderValidators.compose([
-                        FormBuilderValidators.required(context,
-                            errorText: "欄位不能為空值"),
-                      ]),
+                    TextFormField(
+                      autofocus: true,
+                      controller: displayNameController,
+                      decoration: InputDecoration(
+                        enabledBorder: InputBorder.none,
+                        contentPadding: EdgeInsets.zero,
+                        focusColor: Colors.black,
+                        labelText: "顯示名稱",
+                      ),
                     ),
-                    FormBuilderTextField(
-                      obscureText: true,
-                      name: "password",
-                      decoration: InputDecoration(labelText: "密碼"),
-                      validator: FormBuilderValidators.compose([
-                        FormBuilderValidators.required(context,
-                            errorText: "欄位不能為空值"),
-                      ]),
-                    ),
-                    FormBuilderTextField(
-                      name: "displayName",
-                      decoration: InputDecoration(labelText: "顯示名稱"),
-                      validator: FormBuilderValidators.compose([
-                        FormBuilderValidators.required(context,
-                            errorText: "欄位不能為空值"),
-                      ]),
-                    ),
-                    FormBuilderTextField(
-                      name: "email",
-                      decoration: InputDecoration(labelText: "Email"),
-                      validator: FormBuilderValidators.compose([
-                        FormBuilderValidators.required(context,
-                            errorText: "欄位不能為空值"),
-                        FormBuilderValidators.email(context,
-                            errorText: "請填寫正確的Email"),
-                      ]),
-                    ),
+                    TextFormField(
+                        autofocus: true,
+                        controller: emailController,
+                        decoration: InputDecoration(
+                          enabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.zero,
+                          focusColor: Colors.black,
+                          labelText: "email",
+                        )),
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -92,25 +97,15 @@ class _RegisterPageState extends State<RegisterPage> {
                               borderRadius: BorderRadius.circular(18.0),
                               side: BorderSide(color: Colors.blueAccent)),
                           onPressed: () async {
-                            if (_fbKey.currentState.saveAndValidate()) {
-                              print(_fbKey.currentState.value);
-                              vm?.register =
-                                  Register.fromJson(_fbKey.currentState.value);
-                              var resData = await vm?.registerUser();
-                              if (resData != null) {
-                                Navigator.of(context).pop(resData);
-                                // Navigator.pushAndRemoveUntil(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //     builder: (BuildContext context) => Provider(
-                                //       create: (context) => DashboardViewModel(),
-                                //       builder: (context, child) =>
-                                //           DashboardPage(),
-                                //     ),
-                                //   ),
-                                //   (Route<dynamic> route) => false,
-                                // );
-                              }
+                            Map<String, dynamic> dd = {};
+                            dd["userName"] = userNameController.text;
+                            dd["password"] = passwordController.text;
+                            dd["displayName"] = displayNameController.text;
+                            dd["email"] = emailController.text;
+                            vm.register = Register.fromJson(dd);
+                            var resData = await vm.registerUser();
+                            if (resData != null) {
+                              Navigator.of(context).pop(resData);
                             }
                           },
                         ),
@@ -120,7 +115,16 @@ class _RegisterPageState extends State<RegisterPage> {
                               borderRadius: BorderRadius.circular(18.0),
                               side: BorderSide(color: Colors.deepOrangeAccent)),
                           onPressed: () {
-                            _fbKey.currentState.reset();
+                            userNameController.text = "";
+                            passwordController.text = "";
+                            displayNameController.text = "";
+                            emailController.text = "";
+                            Map<String, dynamic> dd = {};
+                            dd["userName"] = userNameController.text;
+                            dd["password"] = passwordController.text;
+                            dd["displayName"] = displayNameController.text;
+                            dd["email"] = emailController.text;
+                            vm.register = Register.fromJson(dd);
                           },
                         ),
                       ],
