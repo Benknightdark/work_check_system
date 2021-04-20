@@ -31,7 +31,7 @@ Dio customAuthDio() {
       (RequestOptions options, RequestInterceptorHandler handler) async {
     dio.interceptors.requestLock.lock();
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? token = prefs.getString("token");
+    String token = prefs.getString("token");
     token = token == null ? "" : token;
     options.headers["Authorization"] = "Bearer " + token;
     dio.interceptors.requestLock.unlock();

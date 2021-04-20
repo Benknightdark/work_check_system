@@ -25,8 +25,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     final vm = Provider.of<RegisterViewModel>(context);
-    late final GlobalKey<FormBuilderState> _fbKey =
-        GlobalKey<FormBuilderState>();
+    final GlobalKey<FormBuilderState> _fbKey = GlobalKey<FormBuilderState>();
 
     return Scaffold(
       appBar: AppBar(

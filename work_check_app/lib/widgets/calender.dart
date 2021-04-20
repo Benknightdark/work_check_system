@@ -13,10 +13,10 @@ class CalenderWidget extends StatefulWidget {
 
 class _CalenderWidgetState extends State<CalenderWidget>
     with TickerProviderStateMixin {
-  Map<DateTime, List>? _events;
+  Map<DateTime, List> _events;
   List _selectedEvents = List.empty();
-  AnimationController? _animationController;
-  CalendarController? _calendarController;
+  AnimationController _animationController;
+  CalendarController _calendarController;
 
   @override
   void initState() {
@@ -31,22 +31,22 @@ class _CalenderWidgetState extends State<CalenderWidget>
           .replaceAll('/', '-')
           .split(" ")[0];
       var punchTypeName = element['punchType'] == "work" ? "😢上班打卡" : "😊下班打卡";
-      if (_events?[DateTime.parse(punchDateTime)] == null) {
-        _events?[DateTime.parse(punchDateTime)] = [
+      if (_events[DateTime.parse(punchDateTime)] == null) {
+        _events[DateTime.parse(punchDateTime)] = [
           {
             "title": punchTypeName + " (" + element['punchDateTime'] + ")",
             "details": element
           }
         ];
       } else {
-        _events?[DateTime.parse(punchDateTime)]?.add({
+        _events[DateTime.parse(punchDateTime)]?.add({
           "title": punchTypeName + " (" + element['punchDateTime'] + ")",
           "details": element
         });
       }
     });
     print(_events);
-    _selectedEvents = _events?[_selectedDay] ?? [];
+    _selectedEvents = _events[_selectedDay] ?? [];
     _calendarController = CalendarController();
 
     _animationController = AnimationController(

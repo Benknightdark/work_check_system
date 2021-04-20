@@ -5,11 +5,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:provider/provider.dart';
 import 'package:work_check_app/pages/register_page.dart';
-import 'package:work_check_app/view_models/dashboard_view_model.dart';
 import 'package:work_check_app/view_models/login_view_model.dart';
 import 'package:work_check_app/view_models/register_view_model.dart';
-
-import 'dashboard_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -29,15 +26,14 @@ class _LoginPageState extends State<LoginPage>
   @override
   void dispose() {
     super.dispose();
-    _controller.dispose();
+    _controller?.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final vm = Provider.of<LoginViewModel>(context);
 
-    late final GlobalKey<FormBuilderState> _fbKey =
-        GlobalKey<FormBuilderState>();
+    final _fbKey = GlobalKey<FormBuilderState>();
 
     return Scaffold(
       appBar: AppBar(
@@ -78,13 +74,13 @@ class _LoginPageState extends State<LoginPage>
                           onPressed: () {
                             if (_fbKey.currentState.saveAndValidate()) {
                               (() async {
-                                vm?.loginModel?.password =
+                                vm.loginModel.password =
                                     _fbKey.currentState.value["Password"];
-                                vm?.loginModel?.userName =
+                                vm.loginModel.userName =
                                     _fbKey.currentState.value["UserName"];
                                 EasyLoading.show(status: '登入中');
 
-                                var resData = await vm?.login();
+                                var resData = await vm.login();
                                 // Navigator.pushAndRemoveUntil(
                                 //   context,
                                 //   MaterialPageRoute(

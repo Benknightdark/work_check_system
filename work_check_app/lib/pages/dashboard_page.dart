@@ -454,7 +454,7 @@ class _DashboardPageState extends State<DashboardPage> {
     }
   }
 
-  Widget _buildTile(Widget child, {Function()? onTap}) {
+  Widget _buildTile(Widget child, {Function() onTap}) {
     return Material(
         elevation: 14.0,
         borderRadius: BorderRadius.circular(12.0),

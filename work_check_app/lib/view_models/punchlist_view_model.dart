@@ -4,7 +4,7 @@ import 'package:work_check_app/services/api/punchservice.dart';
 import 'package:work_check_app/services/base_service.dart';
 
 class PunchlistViewModel extends ChangeNotifier {
-  List<dynamic>? punchlist;
+  List<dynamic> punchlist;
   // = List<dynamic>();
   bool showCalendar = false;
   void changeDisplay() {
