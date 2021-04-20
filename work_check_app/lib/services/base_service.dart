@@ -16,10 +16,12 @@ Dio customDio() {
     handler.next(response);
     //return response; // continue
   }, onError: (DioError e, ErrorInterceptorHandler handler) async {
-    handler.next(e);
     print(e.response);
     EasyLoading.showError(e.response?.data['data']['detail']);
-    // return e.response;
+    handler.resolve(Response(
+      requestOptions: e.requestOptions,
+      data: e.response?.data,
+    ));
   }));
   return dio;
 }
@@ -38,12 +40,13 @@ Dio customAuthDio() {
     handler.next(options);
   }, onResponse: (Response response, ResponseInterceptorHandler handler) async {
     handler.next(response);
-
-    // continue
   }, onError: (DioError e, ErrorInterceptorHandler handler) async {
-    handler.next(e);
     print(e.response);
     EasyLoading.showError(e.response?.data['data']['detail']);
+    handler.resolve(Response(
+      requestOptions: e.requestOptions,
+      data: e.response?.data,
+    ));
   }));
 
   return dio;
