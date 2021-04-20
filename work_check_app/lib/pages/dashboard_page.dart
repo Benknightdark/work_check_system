@@ -268,7 +268,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    FlatButton(
+                    TextButton(
                       onPressed: () {
                         if (vm?.dashboard?.displayName == "登入") {
                           Navigator.of(context)
