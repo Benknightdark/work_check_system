@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import "package:work_check_app/services/punch_detail_service.dart";
 
 class PunchListWidgets extends StatelessWidget {
   final dynamic data;
-  final Function(dynamic item) onShowDetail;
 
-  PunchListWidgets({this.data, this.onShowDetail});
+  PunchListWidgets({this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,8 @@ class PunchListWidgets extends StatelessWidget {
             subtitle: Text(item['punchDateTime']),
             title: Text(item['punchType'] == "work" ? "😢上班打卡" : "😊下班打卡"),
             onTap: () async {
-              await onShowDetail(item);
+              //await onShowDetail(item);
+              PunchDetailService().showDetail(context, item);
             },
           ),
         );

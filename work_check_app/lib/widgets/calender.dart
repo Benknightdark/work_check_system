@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import "package:work_check_app/services/punch_detail_service.dart";
 
 class CalenderWidget extends StatefulWidget {
-  CalenderWidget({this.data, this.onShowDetail});
+  CalenderWidget({this.data});
   final dynamic data;
-  final Function(dynamic item) onShowDetail;
 
   @override
   _CalenderWidgetState createState() => _CalenderWidgetState();
@@ -94,7 +94,7 @@ class _CalenderWidgetState extends State<CalenderWidget>
         const SizedBox(height: 8.0),
         //_buildButtons(),
         const SizedBox(height: 8.0),
-        Expanded(child: _buildEventList(widget.onShowDetail)),
+        Expanded(child: _buildEventList()),
       ],
     );
   }
@@ -126,7 +126,7 @@ class _CalenderWidgetState extends State<CalenderWidget>
     );
   }
 
-  Widget _buildEventList(Function(dynamic item) onShowDetail) {
+  Widget _buildEventList() {
     return ListView(
       children: _selectedEvents
           .map((event) => Container(
@@ -140,8 +140,7 @@ class _CalenderWidgetState extends State<CalenderWidget>
                   title: Text(event['title'].toString()),
                   onTap: () {
                     print(event);
-                    onShowDetail(event['details']);
-                    // print('$event tapped!');
+                    PunchDetailService().showDetail(context, event['details']);
                   },
                 ),
               ))
