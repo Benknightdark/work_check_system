@@ -13,6 +13,8 @@ jobs:
   build:
     # This job will run on ubuntu virtual machine
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./work_check_app
     steps:
     
     # Setup Java environment in order to build the Android app.
