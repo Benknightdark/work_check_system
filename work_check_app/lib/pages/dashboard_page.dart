@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:intl/intl.dart';
+import 'package:proste_dialog/proste_dialog.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:work_check_app/pages/login_page.dart';
 import 'package:work_check_app/pages/punchlist_page.dart';
 import 'package:work_check_app/view_models/dashboard_view_model.dart';
 import 'package:work_check_app/view_models/login_view_model.dart';
-import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:work_check_app/view_models/punchlist_view_model.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -289,27 +289,28 @@ class _DashboardPageState extends State<DashboardPage> {
                         } else {
                           showDialog(
                               context: context,
-                              builder: (_) => NetworkGiffyDialog(
-                                    image: Image.network(
-                                      "https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
-                                      fit: BoxFit.cover,
-                                    ),
-                                    entryAnimation: EntryAnimation.TOP,
-                                    buttonOkText: Text('是'),
-                                    buttonCancelText: Text('否'),
+                              builder: (_) => ProsteDialog(
+                                    type: DialogTipType.warn,
+                                    confirmButtonText: Text('是'),
+                                    cancelButtonText: Text('否'),
+                                    content: Text('是否要登出'),
                                     title: Text(
-                                      '是否要登出',
+                                      '提示訊息',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontSize: 22.0,
                                           fontWeight: FontWeight.w600),
                                     ),
-                                    onOkButtonPressed: () async {
+                                    onConfirm: () async {
                                       SharedPreferences prefs =
                                           await SharedPreferences.getInstance();
                                       prefs.clear();
                                       initData();
                                       Navigator.of(context).pop();
+                                    },
+                                    onCancel: () {
+                                      print('preinstall cancel pressed');
+                                      Navigator.pop(context);
                                     },
                                   ));
                         }
