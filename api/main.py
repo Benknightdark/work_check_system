@@ -1,5 +1,4 @@
 from fastapi import Depends, FastAPI, HTTPException, Request, Response
-# from internal import admin
 from routers import  account,punch
 from fastapi.middleware.gzip import GZipMiddleware
 import json

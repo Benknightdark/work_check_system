@@ -6,7 +6,5 @@ email-validator
 python-multipart
 python-jose[cryptography]
 passlib[bcrypt]
-requests2
-beautifulsoup4
 python-dotenv
 pymongo
